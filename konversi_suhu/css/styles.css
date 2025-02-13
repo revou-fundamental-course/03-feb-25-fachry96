@@ -1,80 +1,356 @@
-/* Ini file CSS */
+
+html {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: clamp(10px, 2vw, 16px);
+    background-color: #5aa9e6;
+}
 
 body {
-    font-family: monospace;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
 main {
-    max-width: 750px;
-    justify-self: center;
-
-    /* Background Matter */
-    background-color: antiquewhite;
-    border-radius: 8px;
+    margin: 0 50px;
+    margin-top: 50px;
+    border-radius: 10px;
+    padding: 50px;
+    max-width: 1080px;
+    max-height: 1920px;
+    border: 5px solid black;
+    box-shadow:  10px 10px 1px black;
+    background-color: #f9f9f9;
+    width: 70%;
 }
 
-.main-header {
+header>h1 {
     text-align: center;
+    font-weight: 900;
+    color: hsl(0, 0%, 0%);
+    margin: 0 0 20px 0;
+    background: #ff6392;
+    border-radius: 10px;
+    border: 5px solid black;
+    padding: 10px;
 }
 
-section {
-    padding: 8px;
+#use-tutorial {
+    padding: 15px;
+    color: #000;
 }
 
-.input-group {
-    display: flex;
-    flex-direction: column;
+p, h4{
+    text-align: justify;
+    color: #000000;
+    line-height:  1.2em;
+    font-size: 1.2em;
+    margin: 0;
 }
 
 input {
-    width: 100%;
-    padding: 12px 20px;
-    margin: 8px 0;
     box-sizing: border-box;
-    border: 3px solid #ccc;
-    -webkit-transition: 0.5s;
-    transition: 0.5s;
-    outline: none;
-}
-
-input[type=number]:focus {
-    border: 3px solid #555;
-}
-
-.button-group {
-    margin-top: 16px;
-}
-
-button {
+    height: 40px;
     border: none;
-    padding: 8px;
-    border-radius: 4px;
+    font-size: 1.1em;
 }
 
-.bg-aquamarine {
-    background-color: aquamarine;
+section {
+    margin-bottom: 20px;
 }
 
-.bg-gray {
-    background-color: lightgray;
+.convertion{
+    display: flex;
+    justify-content: space-between;
 }
 
-.bg-green {
-    background-color: lightgreen;
+.celcius, .fahrenheit {
+    width: 100%;
+    height: 100vh;
+    max-height: 200px;
+    max-width: 240px;
+    text-align: center;
+    border: 5px solid black;
+    margin: 0;
+    padding: 0;
 }
 
-.remark {
+.celcius {
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+    background-color: #7fc8f8;
+    color: black;
+    margin-right: 5px;
+}
+
+.fahrenheit {
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    background-color: #ffe45e;
+    color: black;
+    margin-left: 5px;
+}
+
+.celcius>input, .fahrenheit>input {
+    border-radius: 20px;
+    min-height: 65px;
+    width: 80%;
+    max-width: 200px;
+    margin: 10px 0 30px 0;
+    font-size: 1.7em;
+    text-align: center;
+    border: 3px solid black;
+}
+
+.celcius > label, .fahrenheit > label {
+    display: block; 
+    margin: 15px auto;
+    font-size: 3em;
+    font-weight: 900;
+}
+
+.celcius>input {
+    color: black;
+    background-color: #ffe45e;
+}
+
+.fahrenheit>input {
+    color: black;
+    background-color: #7fc8f8;
+}
+
+.calculation {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+    margin: 0;
+    width: 100%;
+    
+}
+
+#result-calculation {
+    height: 60%;
+    max-width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    padding: 10px;
+    box-sizing: border-box;
+    margin: 10px 25px 25px 25px;
+    background: #7fc8f8;
+    border-radius: 20px;
+    flex: 1;
+    color: black;
+    border: 3px solid black;
+    font-size: 1.4em;
+}
+
+.steps {
+    width: 100%;
+    border-radius: 20px;
+    height: 210px;
+    box-sizing: border-box;
+    overflow: hidden;
+    background-color: #ffe45e;
+    border: 5px solid black;
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    flex-direction: column;
+}
+
+.steps>label {
+    box-sizing: border-box;
+    display: block;
+    padding-left: 25px;
+    padding-top: 25px;
+    font-size: 1.2em;
+    font-weight: 800;
+    color: black;
+}
+
+.steps, .convertion {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    margin: 0;
+}
+
+div>button {
+    border-radius: 20px;
+    border: 5px solid black;
+    width: 100%;
+    max-width: 120px;
+    height: 100%;
+    min-height: 50px;
+    font-size: 16px;
+    font-family: 'Open sans';
+    cursor: pointer;
     font-weight: bold;
-    font-size: x-large;
+    color: black;
+
+}
+
+#konversi {
+    background-color: #7fc8f8;
+}
+
+#reset {
+    background-color: #ff6392;
+}
+
+#reverse {
+    background-color: #ffe45e;
+
+}
+
+#reset:hover {
+    background-color: #dd1c1a;
+    color: #f9f9f9;
+}
+#konversi:hover {
+    background-color: #ffe45e;
+
+}
+
+#reverse:hover {
+    background-color: #7fc8f8;
+}
+
+.button-group{
+    display: flex;
+    max-width: 50%;
+    align-content: space-between;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 30px;
+    box-sizing: border-box;
+    gap: 10px;
+}
+
+header>h4 {
+    margin-bottom: 20px;
+    font-weight: 800;
+    font-size: 1.3em;
+}
+
+.rumus {
+    margin: 20px;
+    box-sizing: border-box;
+}
+
+#rumus>p {
+    margin-bottom: 10px;
+}
+
+#rumus-perhitungan>p {
+    margin-bottom: 10px;
+}
+
+span {
+    font-style: italic;
+    font-size: 1.3em;
+    font-weight: bold;
 }
 
 footer {
     text-align: center;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-style: italic;
+    color: #000;
+    margin: 0;
 }
 
-/* Responsive */
-@media only screen and (max-width: 480px) {
+a {
+    color: #000;
+}
+
+@media (max-width: 500px) {
+
     main {
-        background-color: lightskyblue;
+        margin: auto;
+        border-radius: 10px;
+        padding: 10px;
+        max-width: 1080px;
+        height: 100%;
+        max-height: 720px;
+        width: 80%;
+
+    }
+    
+    section {
+        margin-bottom: 10px;
+    }
+
+    #use-tutorial {
+        padding: 0 15px;
+    }
+
+    .calculation {
+        display: block;
+        margin: 0;
+    }
+
+    .celcius, .fahrenheit {
+        height: 100%;
+    }
+    
+    .celcius > label, .fahrenheit > label {
+        display: block; 
+        margin-top: 2vh;
+        font-size: 2em;
+        font-weight: 900;
+    }
+
+    .celcius>input, .fahrenheit>input {
+        border-radius: 10px;
+        min-height: 10px;
+        width: 100%;
+        max-width: 20vw;
+        margin-top: 0;
+    }
+
+    .convertion {
+        margin-bottom: 10px;
+    }
+
+    #result-calculation {
+        height: 50%;
+        max-width: 100%;
+    }
+
+    .steps {
+        height: 140px;
+    }
+
+    div>button {
+        border-radius: 15px;
+        border: 3px solid black;
+        width: 40%;
+        font-size: 14px;
+    }
+
+    .button-group {
+        max-width: 100%;
+    }
+
+    .rumus {
+        margin: 0 15px;
+    }
+    
+    #rumus-perhitungan>p {
+        margin-bottom: 0;
+    }
+
+    header>h4 {
+        margin: 5px 0;;
     }
 }
